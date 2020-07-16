@@ -1,0 +1,6 @@
+FROM golang:latest
+WORKDIR /go/src/github.com
+ADD gop-install.sh /go/src/github.com
+RUN export GOROOT=/go
+RUN chmod +x ./gop-install.sh && /bin/sh -c ./gop-install.sh
+RUN rm ./gop-install.sh

@@ -1,0 +1,5 @@
+FROM golang:alpine
+WORKDIR /go/src/github.com
+ADD gop-alpine-install.sh /go/src/github.com
+RUN export GOROOT=/go 
+RUN chmod +x ./gop-alpine-install.sh && /bin/sh -c ./gop-alpine-install.sh
